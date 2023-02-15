@@ -1,0 +1,43 @@
+
+
+
+
+#Forli{
+    align-items: center;
+}
+
+#foradding{
+    margin-left: 10px;
+}
+
+.colored{
+    color: red;
+}
+
+.forgreencolor{
+    color: green;
+}
+
+.body{
+    align-items:center;
+}
+
+.container{
+    align-items: center;
+    background-color: rgb(176, 183, 180);
+    margin-left: 30%;
+    width: 30vw;
+
+}
+
+#Forh{
+    font-style: normal;
+    padding-left: 30%;
+    padding-top: 10px;
+    
+}
+
+#newtask{
+    margin-left: 10%;
+    margin-bottom:10% ;
+}

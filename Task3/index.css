@@ -1,0 +1,266 @@
+.navbar-default {
+    background-color: white;
+    border-color: #e7e7e7;
+}
+
+body nav {
+    font-family: monospace;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+    font-weight: bold;
+}
+
+.bg3{
+    /*background-image: url("background.jpg");*/
+    background-color: black;
+    background-size: cover;
+    height: 60%;
+    color: white;
+    opacity: 0.78;
+    padding-left: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 3%;
+}
+.bg3 .h1, .bg3 h1 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #e2b5a3;
+    border-color: #e2b5a3;
+}
+
+    .second {
+        background-color: transparent;
+        border-color: pink;
+        margin-left: 8px;
+    }
+
+    .row-1 {
+        margin-right: -15px;
+        margin-left: -15px;
+        display: flex;
+        flex-direction: row;
+        margin-top: 5%;
+        justify-content: space-between;
+    }
+    .row-1 img {
+        border: 0;
+        border-radius: 18px;
+    }
+
+    .row-1 h4{
+        color: gray;
+        font-weight: bold;
+    }
+
+    .row-1 h1{
+        font-weight: bolder;
+        font-size: 50;
+    }
+
+    .Forimage{
+        height: 18%;
+        width: 22%;
+    }
+
+    .Forp{
+        margin-top: 3%;
+    }
+
+    .btn-primary1 {
+        color: black;
+        background-color: #e2b5a3;
+        border-color: #e2b5a3;
+        font-weight: bold;
+    }
+
+    .newimg{
+        display: flex;
+        flex-direction: row;
+        gap: 14px;
+    }
+    
+    .fourthpart{
+        display: flex;
+        flex-direction: row;
+        justify-items: space-between;
+
+    }
+
+    .fourthpart h4{
+        margin-right: 100px;
+    }
+
+    .bg{
+        background-color: white;
+    }
+    .bg2{
+        background-color: rgb(244, 240, 240);
+    }
+    .fourthpart{
+        display: flex;
+        flex-direction:row ;
+        justify-content: space-evenly;
+        gap: 5px;
+    }
+    .imagef{
+        height: 105%;
+        overflow-y: visible;
+    }
+    .fourthpart h4{
+        color: grey;
+        font-weight: bold;
+        margin-top: 10%;
+    }
+
+    .fourthpart p{
+        font-size: 350%;
+    font-weight: bold;
+    font-family: system-ui;
+    }
+    .forpara{
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+
+
+    
+        
+
+        .ok{
+            margin-left: -8px;
+            margin-top: 3px;
+        }
+        .dot {
+            height: 25px;
+            width: 25px;
+            background-color: #bbb;
+            border-radius: 50%;
+          }
+
+          .gl-1{
+            padding: 5%;
+          }
+
+          .forpara h3{
+            font-weight: bold;
+            font-size: 20px;
+          }
+
+          .for-6{
+            padding-left: 5%;
+          }
+
+          .forbg{
+            background-color: white;
+            margin-left: 10%;
+            margin-right: 10%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+          }
+            
+          .bgclient{
+            background-color: #333;
+            margin-top: 0%;
+            padding-bottom: 3%;
+            
+          }
+          .bgclient h3{
+            color: grey;
+            padding-top: 2%;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+          }
+          .bgclient h1{
+            color: white;
+            font-size: 50px;
+            padding-bottom: 4%;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+          }
+          .forposition{
+            position: relative;
+          }
+          .forchild{
+            position: absolute;
+            margin-top: -30px;
+          }
+
+          .card-items{
+            background-color: #fff;
+            width: 98%;
+            padding: 25px;
+            border-radius: 10px;
+          }
+          .forcomma{
+            display: flex;
+            justify-content: end;
+          }
+
+          .card-items p{
+            font-size: 140%;
+            font-style: italic;
+          }
+
+          .forform{
+            background-color: rgb(232, 242, 239);
+            margin-top: 3%;
+            border-radius: 10px;
+          }
+
+          .forwork{
+            margin-top: 3%;
+            text-align: start;
+          }
+          .forheight{
+            height: 150px;
+          }
+
+          .formbtn{
+            margin-top: 2%;
+            margin-bottom: 4%;
+            background-color: black;
+            margin-left: 85%;
+          }
+
+          .Formap{
+            margin-top: 3%;
+          }
+
+          .foot{
+            background-color:black;
+            text-align: center;
+            margin-top: 0%;
+          }
+          .foot h5{
+            color: white;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+          }
+          .forpre{
+            background-color: black;
+            margin-top:6% ;
+            margin-left: 30%;
+            padding: 8px;
+          }
+
+         .foricon{
+          display: flex;
+          flex-direction: row;
+          gap: 25px;
+          margin-left: 25%;
+          margin-top: 2%;
+         }
+         
+          .forbg h5{
+           font-weight: bold;
+           font-size: 16px;
+           font-family: Arial, Helvetica, sans-serif;
+         }

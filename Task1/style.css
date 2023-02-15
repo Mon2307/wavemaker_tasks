@@ -1,0 +1,112 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+
+.Header{
+    width:100vw;
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: white;
+    border-top: 0px;
+}
+
+.ForButton{
+    padding: 5px 8px;
+     border-radius: 8px;
+     border-color:white;
+     color:steelblue;
+     background-color:white;
+     font-weight: normal;
+     font-size: 2em;
+     margin: 0 8px;
+     cursor: pointer;
+     font-style: normal;
+     font-family: 'Courier New', Courier, monospace;
+}
+
+.ForImage{
+    border-radius: 100%;
+    padding-top: 60px;
+}
+
+.Content{
+    display: flex;
+    flex-direction: row;
+}
+
+.Intro{
+    padding-top: 100px;
+    padding-left: 70px;
+    font-size: 70px;
+    color: plum;
+    font-family:monospace;
+}
+
+.More{
+    display: flex;
+    flex-direction: row;
+}
+
+.Forp{
+      padding-top: 25px;
+      padding-left: 70px;
+    font-size:30px ;
+    font-family: 'Courier New', Courier, monospace;
+    color: darkolivegreen;
+}
+
+.Foricons{
+    display:flex;
+    flex-direction: column;
+    padding-left: 43vw;
+
+}
+
+.ForlinkedIn{
+     padding: 20px;
+     margin-top: 12vw;
+     width: 100px;
+     background-color: rgb(87, 87, 181);
+     border-radius: 40%;
+     border-color: blanchedalmond;
+     border-style: hidden;
+     font-weight: bold;
+     color: white;
+     cursor: pointer;
+
+}
+.Formail{
+    padding: 20px;
+    margin-top: 30px;
+    width: 100px;
+    background-color:rgb(235, 82, 82);
+    border-radius: 40%;
+    border-color: rgb(235, 82, 82);
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+.Fordis{
+    padding: 20px;
+    margin-top: 30px;
+    width: 100px;
+    background-color: grey;
+    border-radius: 40%;
+    border-color: grey;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+.Forinsta{
+    padding: 20px;
+    margin-top: 30px;
+    width: 100px;
+    background-color: rgb(189, 51, 145);
+    border-radius: 40%;
+    border-color: rgb(189, 51, 145);
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
