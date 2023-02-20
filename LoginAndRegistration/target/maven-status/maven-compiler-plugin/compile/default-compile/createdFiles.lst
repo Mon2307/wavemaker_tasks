@@ -1,0 +1,5 @@
+com\loginPage\displayUsers.class
+com\loginPage\filter.class
+com\loginPage\homepage.class
+com\loginPage\newForm.class
+com\loginPage\newUser.class
