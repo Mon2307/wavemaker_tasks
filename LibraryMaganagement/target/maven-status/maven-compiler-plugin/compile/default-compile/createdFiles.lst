@@ -1,0 +1,12 @@
+com\model\UserDetails.class
+com\controller\BookDetailsController.class
+com\services\BookAndUserService.class
+com\controller\UserDetailsController.class
+com\model\BookDetails.class
+com\services\BookAndUserimpl.class
+com\services\UserDetailsService.class
+com\services\BookDetailsService.class
+com\controller\BookAndUserController.class
+com\model\BookAndUser.class
+com\services\BookDetailsServiceimpl.class
+com\services\UserDetailsServiceimpl.class
