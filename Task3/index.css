@@ -1,6 +1,24 @@
+body{
+  overflow-x: hidden;
+}
+
 .navbar-default {
-    background-color: white;
-    border-color: #e7e7e7;
+    background-color:#efefef;
+    border-color: #efefef;
+}
+
+.navbar-header{
+  width: 100%;
+}
+
+.navbar-brand>img {
+  display: inline-block;
+}
+
+.first{
+  color:black !important;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 body nav {
@@ -16,14 +34,15 @@ body nav {
     /*background-image: url("background.jpg");*/
     background-color: black;
     background-size: cover;
-    height: 60%;
+    /* height: 75%; */
     color: white;
     opacity: 0.78;
-    padding-left: 10%;
-    display: flex;
+     /* padding-left: 10%; */
+    /* display: flex;
     flex-direction: column;
-    gap: 3%;
-}
+    gap: 3%; */
+
+} 
 .bg3 .h1, .bg3 h1 {
     font-size: 50px;
     font-weight: bold;
@@ -31,7 +50,7 @@ body nav {
 
 .btn-primary {
     color: #fff;
-    background-color: #e2b5a3;
+    background-color: #f8d9c4;
     border-color: #e2b5a3;
 }
 
@@ -39,6 +58,7 @@ body nav {
         background-color: transparent;
         border-color: pink;
         margin-left: 8px;
+        font-size: 14px;
     }
 
     .row-1 {
@@ -99,6 +119,9 @@ body nav {
 
     .bg{
         background-color: white;
+        position: relative;
+        width: 1025px;
+        
     }
     .bg2{
         background-color: rgb(244, 240, 240);
@@ -106,8 +129,9 @@ body nav {
     .fourthpart{
         display: flex;
         flex-direction:row ;
-        justify-content: space-evenly;
-        gap: 5px;
+        justify-content:flex-start;
+        padding-left: 6em;
+        /* gap: 5px; */
     }
     .imagef{
         height: 105%;
@@ -129,6 +153,7 @@ body nav {
         flex-direction: column;
         gap: 1px;
         padding-left: 8%;
+        margin-left: 2%;
         padding-right: 8%;
     }
 
@@ -157,22 +182,25 @@ body nav {
           }
 
           .for-6{
-            padding-left: 5%;
+            padding-left: 10%;
+            padding-right: 10%;
           }
 
           .forbg{
             background-color: white;
-            margin-left: 10%;
+            margin-left: 14%;
             margin-right: 10%;
             display: flex;
             flex-direction: row;
             justify-content: space-around;
+            border-radius: 8px;
           }
             
           .bgclient{
             background-color: #333;
             margin-top: 0%;
             padding-bottom: 3%;
+            /* margin-left: 8%; */
             
           }
           .bgclient h3{
@@ -212,13 +240,23 @@ body nav {
 
           .forform{
             background-color: rgb(232, 242, 239);
-            margin-top: 3%;
+
             border-radius: 10px;
+            margin: 5%;
+            padding: 3%;
           }
 
-          .forwork{
+          #forwork{
             margin-top: 3%;
             text-align: start;
+            width: 100%;
+            height: 30%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 14px;
+          line-height: 1.42857;
+          color: rgb(177, 166, 166);
           }
           .forheight{
             height: 150px;
@@ -228,7 +266,7 @@ body nav {
             margin-top: 2%;
             margin-bottom: 4%;
             background-color: black;
-            margin-left: 85%;
+            margin-left: 86%;
           }
 
           .Formap{
@@ -242,25 +280,57 @@ body nav {
           }
           .foot h5{
             color: white;
-            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
           }
           .forpre{
             background-color: black;
-            margin-top:6% ;
+            margin-top:10% ;
             margin-left: 30%;
-            padding: 8px;
+            font-weight: bold;
+            font-size: 14px;
           }
 
          .foricon{
-          display: flex;
-          flex-direction: row;
-          gap: 25px;
-          margin-left: 25%;
-          margin-top: 2%;
+          display: inline-block;
+          padding: 7px;
+         background-color: white;
+          border-radius: 8px;
+           margin-top: 4%;
+           margin-right: 12%;
          }
          
           .forbg h5{
            font-weight: bold;
            font-size: 16px;
            font-family: Arial, Helvetica, sans-serif;
+         }
+
+        nav{
+          margin-bottom: 0px !important;
+         }
+
+         .content{
+          margin-left: 9%;
+          display: flex;
+          padding-top: 5%;
+          padding-bottom: 5%;
+          flex-direction: column;
+          gap: 8px;
+          
+         }
+
+         .bg3 h1{
+          margin: 0;
+         }
+
+         .phoneimg{
+          /* padding: 0; */
+          position: absolute;
+          right: 12em;
+          bottom: 0em;
+          height: 35em;
+          border-radius: 4px;
+         }
+         .forform h3{
+          margin: 0%;
          }
