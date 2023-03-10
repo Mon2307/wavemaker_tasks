@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+     table, td, th {  
+      border: 1px solid #ddd;
+      text-align: left;
+         }
+
+     table {
+      border-collapse: collapse;
+     width: 70%;
+       }
+
+    th, td {
+     padding: 8px;
+      }
+
+      .booktable{
+        margin: auto;
+      }
+
+      h1{
+        text-align: center;
+      }
+
+      th{
+        border: 2px solid brown;
+      }
+
+      tr td{
+        border: 2px solid rgb(28, 25, 25);
+      }
+
+</style>
+<body>
+
+          
+                 <!-- Here a loader is created which 
+             loads till response comes -->
+        <!-- <div class="d-flex justify-content-center">
+            <div class="spinner-border" 
+                 role="status" id="loading">
+                <span class="sr-only">Loading...</span>
+            </div> -->
+        <!-- </div> -->
+        <h1>Books in the Library</h1>
+        <!-- table for showing data -->
+        <table id="Books" class="booktable" ></table>
+
+
+
+    <script>
+
+// api url
+const api_url =
+	'http://localhost:8080/LibraryManagementProject/books';
+
+// Defining async function
+async function getapi(url) {
+	
+	// Storing response
+	const response = await fetch(url);
+	
+	// Storing data in form of JSON
+	var data = await response.json();
+	console.log(data);
+	if (response) {
+		show(data);
+	}
+    else{
+        loader();
+    }
+	
+}
+// Calling that async function
+getapi(api_url);
+
+// Function to hide the loader
+function loader() {
+	document.getElementById('loading').style.display;
+}
+// Function to define innerHTML for HTML table
+function show(data) {
+	let tab =
+		`<tr>
+		<th>Book Name</th>
+		<th>Author</th>
+		<th>Publication</th>
+		<th>Book No</th>
+		</tr>`;
+	
+	// Loop to access all rows
+	for (let r of data) {
+		tab += `<tr>
+	<td>${r.bookName} </td>
+	<td>${r.authorName}</td>
+	<td>${r.publication}</td>
+	<td>${r.bookId}</td>		
+</tr>`;
+	}
+	// Setting innerHTML as tab variable
+	document.getElementById("Books").innerHTML = tab;
+}
+
+
+    </script>
+</body>
+</html>

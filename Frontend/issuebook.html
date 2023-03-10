@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issue Book</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        .containerbg{
+            background-image: url('./icons/background.png');
+            align-items: center;
+        }
+
+        .content{
+            background-color: #f2870b !important;
+            background-image:linear-gradient(224deg,#afa5917a,transparent);
+            margin: 8%;
+           
+
+        }
+        .jumbotron{
+            margin: 12% 25%;
+        }
+        .inputbutton{   
+         border-radius: 10px;
+         outline: 1px solid #FEBF00;
+        border: 0;
+        font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+        background-color: #e2e2e2;
+        outline-offset: 3px;
+        padding: 10px 1rem;
+        transition: 0.25s;
+        width: 50%;
+        margin-top: 2%;
+         }
+
+           .inputbutton:focus {
+           outline-offset: 5px;
+           background-color: #fff
+              }
+          label{
+            color: #fff;
+            margin-left: 9rem;
+            font-size: 15px;
+             }
+        .inputlabel{
+            margin-top: 2%;
+        }
+
+
+
+::selection{
+  color: #fff;
+  background: #664AFF;
+}
+
+.wrapper{
+  max-width: 315px;
+  margin: 2% auto;
+}
+
+.wrapper .search-input{
+  background: #fff;
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.12);
+}
+
+.search-input input{
+  height: 44px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 0 60px 0 20px;
+  font-size: 18px;
+  box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+}
+
+.search-input.active input{
+  border-radius: 5px 5px 0 0;
+}
+
+.search-input .autocom-box{
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.search-input.active .autocom-box{
+  padding: 10px 8px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.autocom-box li{
+  list-style: none;
+  padding: 8px 12px;
+  display: none;
+  width: 100%;
+  cursor: default;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.search-input.active .autocom-box li{
+  display: block;
+}
+.autocom-box li:hover{
+  background: #efefef;
+}
+
+
+
+.inputbox{
+   margin-top: 2%;
+}
+
+h2{
+  color: #efefef;
+ text-align: center;
+ margin-top:0;
+}
+
+.issuebutton{
+  background-color: #efefef;
+  padding: 8px 16px;
+  color: black;
+  margin-left: 40%;
+  margin-top: 3%;
+  border: #efefef;
+  background-color: darkseagreen;
+
+}
+.issuebutton:hover{
+  background-color: darkolivegreen;
+}
+
+.forbutton{
+  margin-left:9rem;
+  width:315px;
+  height: 44px;
+  border-radius: 5px;
+  border: #efefef;
+}
+    </style>
+   
+</head>
+<body>
+    <div class="container-fluid containerbg">
+        <div class="jumbotron content">
+           <h2>Issue a Book</h2>
+                <form class="form" id="issue">
+                         
+                  
+                  
+                     <div class=" inputbox">
+                      
+                        <div class="search-input wrapper">
+                          <a href="" target="_blank" hidden></a>
+                          
+                          <input type="text" placeholder="Type to search book" name="bookName" id="bookName">
+                        <div class="autocom-box">
+          <!-- here list are inserted from javascript -->
+                        </div>
+                      
+                             </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-12 inputlabel">
+                            <label for="studentrollno">Student Roll no</label><br>
+                             <input class="forbutton" id="studentrollno" type="text" name="studentRollNo" ></input>
+                           </div>
+                        </div>
+                        
+                         <div class="row">
+                          <div class="col-sm-12 inputlabel">
+                            <label for="issuedate">Issue Date</label><br>
+                             <input class="forbutton" id="issuedate" type="date" name="issueDate" ></input>
+                           </div>
+                         </div>
+                         
+                         <div>
+                          <button type="submit" class="btn-primary btn issuebutton" >Issue Book</button>
+                         </div>
+                   
+ 
+                    <!-- <div class="row">
+                        <div class="col-sm-12 inputlabel ">
+                            <label for="rollno">Student Roll no.:</label><br>
+                             <input class="inputbutton" type="text" id="studentRollNo" name="studentRollNo"> </input>
+                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 inputlabel ">
+                            <label for="issuedate">Issue Date:</label><br>
+                             <input class="inputbutton" type="date" id="issuedate" name="issuedate"> </input>
+                            
+                        </div>
+                    </div>
+                     -->
+            </form> 
+        </div>
+    </div>
+
+    <script src="JS/bookissue.js"></script>
+</body>
+</html>

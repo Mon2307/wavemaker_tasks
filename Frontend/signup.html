@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <form class="signupform" id="signupForm">
+        <span class="title">Create account</span>
+        <label for="name">Name</label>
+         <span> <input type="text" class="input"  id="name"name="librarianName"></span>
+         <label for="email">Email</label>
+       <input type="email" class="input" id="email" name="emailId">  
+       <label for="password" >Password</label>
+        <input type="password" class="input" id="password" name="password"> 
+        <label for="Qualification"  >Qualification</label>
+          <input type="text" class="input" id="Qualification" name="qualification">  
+          <label for="gender">Gender</label>
+                    <select id="gender" class="input" name="genderId">
+                        <option value="31">Female</option>
+                        <option value="32">Male</option>
+                        <option value="33">Other</option> 
+                      </select>        
+          <label for id="joining_date">Joining Date</label>
+          <input type="date" class="input" id="joining_date" name="joiningDate"> 
+          <button class="forregister" type="submit" >Sign Up</button>
+      </form>
+      <script src="JS/signup.js"></script>
+</body>
+
+</html>
+
+<!-- onclick="loginpage()" -->

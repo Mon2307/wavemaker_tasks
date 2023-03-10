@@ -1,0 +1,183 @@
+body{
+    background-image: url("../icons/background.png");
+}
+
+
+
+.card {
+    width: 272px;
+    height: 400px;
+    background: #faf1f2;
+    padding: 2rem 1.5rem;
+    transition: box-shadow .3s ease, transform .2s ease;
+    margin-left: auto;
+    margin-top: 5%;
+    margin-right: auto;
+    box-shadow:-1px -1px 10px 0px #dcd6d1;
+    border-radius: 20px;
+   }
+   
+   .card-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform .2s ease, opacity .2s ease;
+   }
+   
+   /*Image*/
+   .card-logo {
+    --size: 70px;
+    /* background: linear-gradient(to top, #f1e1c1 0%, #fcbc97 100%); */
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    transition: transform .2s ease;
+    margin-bottom: 1rem;
+   }
+   
+   .input-wrapper input {
+    background-color: #ede3da;
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    width: 22em;
+    border-radius: 6rem;
+    color: black;
+    box-shadow: -1px 0rem 0px 1px #ddd8d8;
+    cursor: pointer;
+    margin-left: 0.8rem;
+    margin-top: 1rem;
+    margin-bottom: 2%;
+
+  }
+  
+  .input-wrapper input:focus {
+    outline-color: lightcoral;
+  }
+   
+   
+  
+   
+   /*Text*/
+   .card-title {
+    color: #333;
+    font-size: 1.5em;
+    font-weight: 600;
+    line-height: 2rem;
+   }
+   
+   .card-subtitle {
+    color: #859ba8;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+   }
+   
+   .forforget{
+
+    margin-top: 2rem;
+    /* width: 10rem; */
+    margin-left: 0.5rem;
+    border-radius: 16px;
+    background-color: #f7911a;
+    color: white;
+    border-color: #bbcad6;
+   }
+   
+   .forlogin{
+     
+    margin-top: 2rem; 
+    width: 10rem; 
+    border-radius: 16px;
+    background-color: #f7911a;
+    color: white;
+    border-color: #bbcad6;
+   }
+   .forforget:hover{
+    background-color: #dac0a2;
+   }
+
+   .forlogin:hover{
+    background-color: #dac0a2;
+   }
+     
+   .signupform {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin:auto;
+     width: 400px; 
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px 20px;
+    box-shadow: 100px 100px 80px rgba(0, 0, 0, 0.03);
+    margin-top: 4px;
+  }
+  
+  .title {
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 2px;
+    padding-top: 3px;
+  }
+  
+  .sub {
+    text-align: center;
+    color: black;
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  
+  
+  .sub a {
+    color: rgb(23, 111, 211);
+  }
+
+  
+  .signup form button {
+    align-self: flex-end;
+  }
+  
+  .input, button {
+    border: none;
+    outline: none;
+    width: 95%;
+    padding: 10px 10px;
+    background-color: #ede3da;
+    border-radius: 10px;
+    box-shadow: 12.5px 12.5px 10px rgba(0, 0, 0, 0.015),100px 100px 80px rgba(0, 0, 0, 0.03);
+  }
+  
+  .forregister {
+    margin-top: 12px;
+     background-color: rgb(23, 111, 211); 
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px;
+    b
+  }
+  
+  .input:focus {
+    border: 1px solid rgb(230, 140, 84);
+  }
+  
+  .card-items{
+    background-color: #fff;
+    width: 98%;
+    padding: 25px;
+    border-radius: 10px;
+  }
+ 
+  
+  
+ .subdate{
+  margin-left: 3px;
+  font-size: 14px;
+  margin-bottom: 6px;
+ }
+
+ 

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+         <link rel="stylesheet" href="CSS/index.css">
+</head>
+<body>
+
+    <div class="card">
+        <div class="card-info">
+        <div class="card-logo">
+            <img src="icons/logo.png" height="70px" width="70px">
+        </div>
+        <div class="card-title">Login Page</div>
+        <div class="card-subtitle">Librarian</div>
+        </div>
+       <form action="homepage.html" id="loginForm">
+        <div class="input-wrapper">
+            <input type="text" placeholder="Username" name="username" class="input">
+          </div>
+          <div class="input-wrapper">
+            <input type="password" placeholder="Password" name="password" class="input">
+        </div>
+            <div class="row" >
+                <div class="col-sm-6">
+                    <button class="btn btn-primary forlogin"  type="button" onclick="homepage()">Login</button> 
+                </div>
+                  <div class="col-sm-6" >
+                    <button class="btn btn-primary forlogin"type="button" onclick="display()">Sign Up</button>
+                  </div>
+               
+            </div>
+                   
+                 <div class="row">
+                    <div class="col-sm-12">
+                        <button class="btn btn-primary forforget"type="button" >Forgot Password</button>
+                    </div>
+                 </div> 
+       </form>
+               
+ </div>
+           
+
+        
+</div>
+    <script >
+                    function homepage(){window.location.href = "homepage.html";}   
+                    function display(){
+    window.location.href = "signup.html";
+}     
+    </script>
+</body>
+</html>

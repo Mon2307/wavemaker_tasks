@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <title>Add Book</title>
+    <!-- <link rel="stylesheet" href="index.css"> -->
+       <style>
+                .addbookform{
+            background-color: #f2870b;
+                background-image:linear-gradient(224deg,#afa5917a,transparent);
+            margin-top: 3% !important;
+             margin-left: 12%;
+            margin-bottom: 6%; 
+            width: 1000px;
+        }
+        .addbutton:hover{
+            background-color: #333;
+        }
+
+        .containerbg{
+            background-image: url('./icons/background.png');
+            align-items: center;
+        }
+        .inputbutton{   
+  border-radius: 10px;
+  outline: 1px solid #FEBF00;
+  border: 0;
+  font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #e2e2e2;
+  outline-offset: 3px;
+  padding: 10px 1rem;
+  transition: 0.25s;
+  width: 90%;
+  margin-top: 2%;
+}
+
+.inputbutton:focus {
+  outline-offset: 5px;
+  background-color: #fff
+}
+        .addbookform h2{
+            margin-left: 35%;
+            color: #fff;
+        }
+
+        .addbutton{
+            margin-left: 45%;
+    margin-top: 4%;
+    padding: 1% 4%;
+    border-radius: 8px;
+    background-color: #333;
+        }
+
+        label{
+            color: #fff;
+        }
+        .inputlabel{
+            margin-top: 2%;
+        }
+        
+       </style>
+</head>
+<body>
+    <div class="container-fluid containerbg">
+        <div class="jumbotron addbookform"> 
+           <form action="#" id="addBook">
+
+            <h2>Enter the Book Details!</h2>
+             <div class="row">
+                <div class="col-sm-4 inputlabel ">
+                    <label for="bookname">Book Name</label>
+                     <input class="inputbutton" type="text" id="bookname" name="bookName"> </input>
+                    
+                </div>
+               <div class="col-sm-4 inputlabel">
+                <label for="authorname">Author Name</label>
+                 <input class="inputbutton" id="authorname" type="text" name="authorName" ></input>
+               </div>
+               <div class="col-sm-4 inputlabel">
+                <label for="publication">Publication</label>
+                <input class="inputbutton" id="publication" type="text" name="publication" ></input>
+               </div>
+             </div>
+             <div class="row">
+                <div class="col-sm-4 inputlabel ">
+                    <label for="language">Language</label>
+                    <select id="language" name="languageId" class="inputbutton" >
+                        <option value="11" name="languageId">English</option>
+                        <option value="22" name="languageId">Hindi</option>
+                        <option value="33" name="languageId">Marathi</option>
+                        <option value="44"name="languageId">Sanskrit</option>
+                        
+                      </select>
+                </div>
+                <div class="col-sm-4 inputlabel">
+                    <label for="category">Category</label>
+                    <select id="category" name="categoryId" class="inputbutton">
+                        <option value="1" name="categoryId">Fiction</option>
+                        <option value="2" name="categoryId">Horror</option>
+                        <option value="3"name="categoryId">Science Fiction</option>
+                        <option value="4"name="categoryId">Crime</option>
+                        <option value="5"name="categoryId">Education</option>
+                        <option value="6"name="categoryId">Sports</option>
+                       
+                      </select>
+                </div>
+                <div class="col-sm-4 inputlabel">
+                    <label for="cost">Cost(₹)</label>
+                    <input class="inputbutton" id="cost" type="text" name="cost"> </input>
+               </div>
+               
+             </div>
+             <div class="row">
+               
+               <div class="col-sm-4 inputlabel">
+                <label for="shelflocation">Shelf Location</label>
+                <input class="inputbutton" id="shelflocation" type="text" name="shelfName"></input>
+               </div>
+             
+             <div class="col-sm-4 inputlabel">
+                <label for="isavailable">Is Available</label>
+                <select id="isavailable" name="isAvailable" class="inputbutton">
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                    
+                </select>
+               </div>
+               <div class="col-sm-4 inputlabel">
+                <label for="Bookno">Book no.</label>
+                <input class="inputbutton" id="Bookno" type="text" name="bookId" > </input>
+           </div>
+        </div>
+        <div class="row">
+            
+            <div class="col-sm-4 inputlabel">
+                <label for="totalcopies">Total copies</label>
+             <input class="inputbutton" id="totalcopies" type="text" name="total_copies"></input>
+            </div>
+        </div>
+                 <div class="row ">
+                    <button class="btn btn-primary addbutton" type="submit">Add</button>
+                 </div>
+                
+           </form>
+        </div>
+    </div>
+
+    <script src="JS/index.js"></script>
+</body>
+</html>
