@@ -1,0 +1,532 @@
+.forbackground{
+    background-image: url('../icons/background.png');
+    padding-top: 4%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
+    filter: blur(5px);
+  }
+ 
+
+
+
+
+a:link{
+    color: white;
+}
+
+
+    .back {
+        margin: 2%;
+        background-color: orange !important;
+    }
+   
+    .btn-primary.active {
+      color: #fff;
+      background-color: orange;
+      border-color: black;
+  }
+
+  .btn-primary::selection {
+    color: #fff;
+    background: orange;
+}
+  
+  .btn-primary {
+    color: #fff;
+    background-color: black;
+    border-color: orange;
+}
+  .btn-primary.active:hover{
+    color: rgb(255, 255, 255);
+    background-color: black;
+    border-color: orange;
+  }
+  .btn-primary:hover {
+    color: rgb(255, 255, 255);
+    background-color: black;
+    border-color: orange;
+}
+
+  .jumbotron{
+    background-color: rgba(255,255,255,.15);
+    margin: auto;
+    width: 1000px;
+    margin-bottom: 3%;
+    background-image: linear-gradient(213deg,#1f1d1c94,rgb(40 35 35 / 51%));
+    /* height: 589px; */
+    margin-top: -6%;
+    height: 534px;
+  }
+
+  .issuebtn{
+    background-color: orange;
+    margin-left: 75%;
+  }
+
+  
+ table, td, th {  
+  border: 1px solid #ddd;
+  text-align: left;
+  color: white;
+     }
+
+ table {
+  border-collapse: collapse;
+ width: 70%;
+   }
+
+th, td {
+ padding: 6px;
+  }
+
+  .booktable{
+    margin: auto;
+    margin-top: 2%;
+    /* height: auto; */
+   
+  }
+  .fortable{
+    margin-top: 1%;
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+
+td {
+    text-align:center;
+}
+  /* table{
+    table-layout: fixed;
+  }
+  tbody{
+        display: block;
+      overflow: auto;
+  } */
+  h1{
+    text-align: center;
+  }
+
+  th{
+    border: 2px solid rgb(236, 234, 231);
+    background-color: orange;
+    position: sticky;
+    top: 0px;
+  }
+
+  tr td{
+    border: 2px solid rgb(244, 241, 235);
+  }
+
+/*   
+  .forbooktable .fix-table-head{
+    padding: 2%;
+    height: 720px;
+    overflow-y: scroll;
+  }
+ .forbooktable table {
+     width: 100%;
+  }
+ .forbooktable th {
+     top: 0;
+     position: sticky;
+  }
+ .forbooktable th,td{
+     width:100%;
+     padding: 12px 15px;
+  } */
+
+  /* .booktable ::-webkit-scrollbar {
+    width: 10px;
+  } */
+  
+  /* Track */
+  /* ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  } */
+   
+  /* Handle */
+  /* ::-webkit-scrollbar-thumb {
+    background: #888; 
+  } */
+  
+  /* Handle on hover */
+  /* ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  } */
+  /* .forbookbg{
+    background-image: linear-gradient(213deg,#1f1d1c94,rgb(40 35 35 / 51%));
+  } */
+
+
+  /* .jumbotron{
+    background-color: rgba(255,255,255,.15);
+    margin: auto;
+    width: 1000px;
+  }
+
+  .forbackground{
+    background-image: url(background.png);
+  }
+
+  h2{
+    color:rgb(249, 247, 243) !important;
+    text-align: center;
+  } */
+
+  
+
+  #issuedbooks{
+    display: none;
+  }
+
+  #allbooks{
+    display: block;
+  }
+
+  a{
+    text-decoration: none;
+  }
+
+  /* #addBook{
+    display: none;
+  } */
+
+  .returnbtn{
+    background-color: orange;
+  }
+
+  .addbook{
+    background-color: orange;
+    margin-left: 75%;
+    margin-top: 1%;
+  }
+
+  .addbookform{
+    border: 1px solid orange;
+    position: absolute;
+    /* display: none; */
+    left: 14%;
+    top: 10%;
+    background-color: white;
+    border-radius: 29px;
+    padding: 12px;
+  }
+
+  .forinputfield{
+    margin: 2px;
+  }
+
+  /* .addbookopen{
+    display: block;
+  } */
+
+  .inputbutton{
+    margin: auto;
+  }
+
+  .pattern{
+    margin: 2%;
+  }
+
+  .addbtn{
+    margin-left: 50%;
+background-color: orange;
+margin-top: 2%;
+  }
+
+  .foricon{
+    height: 48px;
+margin-left: 40%;
+ }
+
+
+ /* //bookissuecss */
+
+ h2{
+    color: #efefef;
+   text-align: center;
+   margin-top:0;
+  }
+  
+  .issuebutton{
+    background-color: #efefef;
+    padding: 8px 16px;
+    color: black;
+    margin-left: 40%;
+    margin-top: 3%;
+    border: #efefef;
+    background-color: darkseagreen;
+  
+  }
+  .issuebutton:hover{
+    background-color: darkolivegreen;
+  }
+
+  .foricon2 {
+    height: 48px;
+    margin-left: 97%;
+}
+.foricon3 {
+  height: 48px;
+  margin-left: 98%;
+}
+  
+  
+  /* //bookissuecss */
+  /* .inputbutton{   
+      border-radius: 10px;
+      outline: 1px solid #FEBF00;
+     border: 0;
+     font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+     background-color: #e2e2e2;
+     outline-offset: 3px;
+     padding: 10px 1rem;
+     transition: 0.25s;
+     width: 50%;
+     margin-top: 2%;
+      }
+  
+        .inputbutton:focus {
+        outline-offset: 5px;
+        background-color: #fff
+           } */
+       /* label{
+         color: #100f0f;
+         margin-left: 9rem;
+         font-size: 15px;
+          } */
+     .inputlabel{
+         margin-top: 2%;
+     }
+  
+  
+  
+  ::selection{
+  color: #fff;
+  background: #664AFF;
+  }
+  
+  .wrapper{
+  max-width: 315px;
+  margin: 2% auto;
+  }
+  
+  .wrapper .search-input{
+  background: #fff;
+  width: 100%;
+  /* border-radius: 5px; */
+  position: relative;
+  /* box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.12); */
+  }
+  
+  .search-input input{
+  height: 44px;
+  width: 100%;
+  outline: none;
+  /* border: none; */
+  /* border-radius: 5px; */
+  padding: 0 60px 0 20px;
+  font-size: 14px;
+  border-radius: 8px;
+  box-shadow: 0px 1px 5px rgba(0,0,0,0.1); 
+}
+  /**/
+  
+  
+  .search-input.active input{
+  border-radius: 5px 5px 0 0;
+  }
+  
+  .search-input .autocom-box{
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+  max-height: 280px;
+  overflow-y: auto;
+  
+  }
+  
+  .search-input.active .autocom-box{
+  padding: 10px 8px;
+  opacity: 1;
+  pointer-events: auto;
+  }
+  
+  .autocom-box li{
+  list-style: none;
+  padding: 8px 12px;
+  display: none;
+  width: 100%;
+  cursor: default;
+  border-radius: 3px;
+  background-color: #171616;
+  color: white;
+  }
+  
+  .search-input.active .autocom-box li{
+  display: block;
+  position: absolute;
+  width: 295px;
+  z-index: 10; 
+  color: #efefef;
+  }
+  .autocom-box li:hover{
+  background: #302b2b;
+  color: white;
+  }
+  
+  
+  
+  .inputbox{
+  margin-top: 2%;
+  }
+  .autocom-box{
+  position: absolute !important;
+  }
+  .autocom-box li{
+  position: relative !important;
+  }
+  .wrappers{
+    max-width: 315px;
+    margin: 2% auto;
+    }
+    
+    .wrappers .search-inputs{
+    background: #fff;
+    width: 100%;
+    /* border-radius: 5px; */
+    position: relative;
+    /* box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.12); */
+    }
+    
+    .search-inputs input{
+    height: 44px;
+    width: 100%;
+    outline: none;
+    /* border: none; */
+    /* border-radius: 5px; */
+    padding: 0 60px 0 20px;
+    font-size: 14px;
+    border-radius: 8px;
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.1); 
+    /* box-shadow: 0px 1px 5px rgba(0,0,0,0.1); */
+    }
+    
+    .search-inputs.active input{
+    border-radius: 5px 5px 0 0;
+    }
+    
+    .search-inputs .autocom-boxs{
+    padding: 0;
+    opacity: 0;
+    pointer-events: none;
+    max-height: 280px;
+    overflow-y: auto;
+    
+    }
+    
+    .search-inputs.active .autocom-boxs{
+    padding: 10px 8px;
+    opacity: 1;
+    pointer-events: auto;
+    }
+    
+    .autocom-boxs li{
+    list-style: none;
+    padding: 8px 12px;
+    display: none;
+    width: 100%;
+    cursor: default;
+    border-radius: 3px;
+    background-color: #171616;
+    color: white;
+    }
+    
+    .search-inputs.active .autocom-boxs li{
+    display: block;
+    position: absolute;
+    width: 295px;
+    z-index: 10; 
+    color: #efefef;
+    }
+    .autocom-boxs li:hover{
+    background: #302b2b;
+    color: white;
+    }
+    
+    
+    
+    .inputboxs{
+    margin-top: 2%;
+    }
+    .autocom-boxs{
+    position: absolute !important;
+    }
+    .autocom-boxs li{
+    position: relative !important;
+    }
+  
+
+  .issueform{
+    align-items: center;
+    position: absolute;
+    left: 40%;
+    top:20%;
+    border: white;
+    padding: 25px;
+    border-radius: 6px;
+    background-color: white;
+  }
+ 
+  #issueformhide{
+    display: none;
+  }
+  
+  .forbutton{
+    margin-left: 1%;
+    width: 309px;
+    height: 38px;
+  }
+  
+  .buttonissue{
+         margin-top: 1%;
+        
+            margin-top: 5%;
+            margin-left: 40%;
+        
+  }
+
+  .issueinput{
+    padding-left:5%;
+    border-radius: 8px;
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.1); 
+    
+  } 
+  /* .inputbutton{
+    border-radius: 8px;
+  } */
+
+  .addbookform h2{
+    color: black;
+  }
+  
+
+  #controladdbook{
+    display: none;
+  }
+
+  #search {
+    margin-left: 15%;
+    padding-left: 16px;
+    padding-right: 90px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border: 1px orange;
+    border-radius: 5px;
+    background-color: #080707;
+    color: white;
+}

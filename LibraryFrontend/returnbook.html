@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <title>Books</title>
+</head>
+
+<style>
+
+     table, td, th {  
+      border: 1px solid #ddd;
+      text-align: left;
+      color: white;
+         }
+
+     table {
+      border-collapse: collapse;
+     width: 70%;
+       }
+
+    th, td {
+     padding: 8px;
+      }
+
+      .booktable{
+        margin: auto;
+      }
+
+      h1{
+        text-align: center;
+      }
+
+      th{
+        border: 2px solid rgb(236, 234, 231);
+        background-color: orange;
+      }
+
+      tr td{
+        border: 2px solid rgb(244, 241, 235);
+      }
+      .forbookbg{
+        background-image: linear-gradient(213deg,#1f1d1c94,rgb(40 35 35 / 51%));
+      }
+    
+
+      .jumbotron{
+        background-color: rgba(255,255,255,.15);
+        margin: auto;
+        width: 1000px;
+      }
+
+      /* .forbackground{
+        background-image: url(background.png);
+      } */
+
+      h2{
+        color:rgb(249, 247, 243) !important;
+        text-align: center;
+      }
+     
+</style>
+<body>
+
+       <div class="forbackground">
+       
+        <!-- table for showing data -->
+        <div class="jumbotron forbookbg">
+          <h2>Books in the Library</h2>
+          <table id="Books" class="booktable" ></table>
+        </div>
+       </div>
+       
+        
+
+
+
+    <script>
+
+// api url
+const api_url =
+	'http://localhost:8080/Library/books';
+
+// Defining async function
+async function getapi(url) {
+	
+	// Storing response
+	const response = await fetch(url);
+	
+	// Storing data in form of JSON
+	var data = await response.json();
+	console.log(data);
+	if (response) {
+		show(data);
+	}
+    else{
+        loader();
+    }
+	
+}
+
+function returnrow(el){
+    var uTable = document.getElementById('Books');
+
+ let index = el.parentNode.parentNode.rowIndex;
+ var Cells = uTable.rows.item(index).cells;
+let bookName = Cells[0].innerText;
+let studentRollNo = Cells[1].innerText;
+console.log(index);
+console.log(Cells);
+console.log(studentRollNo);
+console.log(bookName);
+
+
+function SetDate()
+{
+var date = new Date();
+
+var day = date.getDate();
+var month = date.getMonth() + 1;
+var year = date.getFullYear();
+
+if (month < 10) month = "0" + month;
+if (day < 10) day = "0" + day;
+
+var today = year + "-" + month + "-" + day;
+return today;
+}
+var formDataObject={};
+formDataObject.returnDate=SetDate();
+formDataObject.bookName=bookName;
+formDataObject.studentRollNo=studentRollNo;
+//formDataObject.studentRollNo=
+let formDataJsonString = JSON.stringify(formDataObject);
+
+
+}
+// Calling that async function
+getapi(api_url);
+
+// Function to hide the loader
+function loader() {
+	document.getElementById('loading').style.display;
+}
+// Function to define innerHTML for HTML table
+function show(data) {
+	let tab =
+		`<tr>
+		<th>Book No</th>
+		<th>Book Name</th>
+		<th>Author</th>
+		<th>Publication</th>
+    <th>Count</th>
+		</tr>`;
+	
+	// Loop to access all rows
+	for (let r of data) {
+		tab += `<tr>
+  <td>${r.bookId}</td>
+	<td>${r.bookName} </td>
+	<td>${r.authorName}</td>
+	<td>${r.publication}</td>
+  <td>${r.total_copies}</td>	
+ <td> <button onclick="returnrow(this)" >Return</button><td>		
+</tr>`;
+	}
+	// Setting innerHTML as tab variable
+	document.getElementById("Books").innerHTML = tab;
+}
+
+
+    </script>
+</body>
+</html>

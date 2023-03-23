@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f90b4ddd1d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="CSS/book.css">
+    <style>
+        
+    </style>
+</head>
+<body onload="showbooks()">
+            <!--issuebook and table -->
+    <div class="forbackground"> </div>
+        <button class="btn btn-primary back" onclick="gotohome()">Back</button>
+        
+        <div class="jumbotron">
+            <ul>
+                <button onclick="showbooks()" class="btn btn-primary active books" >Books</button></li>
+                <button class="btn btn-primary issuebook" onclick="showissuedbooks()">Issued Books</button></li>
+              </ul>
+              <div id="allbooks">
+                <button class="btn btn-primary addbook" onclick="addbook()">Add Book</button>
+                <input type="text" id="search"onkeyup="myFunction()" placeholder="Search for Book" title="Type in a name">
+                <div class="fortable" id="forbootable"><table id="Books" class="booktable" ></table></div>
+              </div>
+          <div id="issuedbooks">
+            <button class="btn btn-primary issuebtn" onclick="issueabook()">Issue Book</button>
+            <div class="fortable">
+              <table id="issuedBooks" class="booktable"></table>
+            </div>
+          </div>
+        </div>
+      
+
+      <!-- booksform -->
+      <div  id="controladdbook">
+      <div class="addbookform">
+        <div class="row foricon2">
+            <button onclick="closeaddbook()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+        <form action="#" id="addBook" >
+            
+            <h2>Enter the Book Details!</h2>
+             <div class="row pattern">
+                <div class="col-sm-4 inputlabel ">
+                    <label for="bookname">Book Name*</label>
+                     <input class="inputbutton" type="text" id="bookname" name="bookName" required> </input>
+                    
+                </div>
+               <div class="col-sm-4 inputlabel">
+                <label for="authorname">Author Name *</label>
+                 <input class="inputbutton" id="authorname" type="text" name="authorName" required ></input>
+               </div>
+               <div class="col-sm-4 inputlabel">
+                <label for="publication">Publication*</label>
+                <input class="inputbutton" id="publication" type="text" name="publication" required ></input>
+               </div>
+             </div>
+             <div class="row pattern">
+                <div class="col-sm-4 inputlabel ">
+                    <label for="language">Language*</label><br>
+                    <select id="language" name="languageId" class="inputbutton" required >
+                        <option value="11" name="languageId">English</option>
+                        <option value="22" name="languageId">Hindi</option>
+                        <option value="33" name="languageId">Marathi</option>
+                        <option value="44"name="languageId">Sanskrit</option>
+                        
+                      </select>
+                </div>
+                <div class="col-sm-4 inputlabel">
+                    <label for="category">Genre*</label><br>
+                    <select id="category" name="categoryId" class="inputbutton" required>
+                        <option value="1" name="categoryId">Fiction</option>
+                        <option value="2" name="categoryId">Horror</option>
+                        <option value="3"name="categoryId">Science Fiction</option>
+                        <option value="4"name="categoryId">Crime</option>
+                        <option value="5"name="categoryId">Education</option>
+                        <option value="6"name="categoryId">Sports</option>
+                       
+                      </select>
+                </div>
+                <div class="col-sm-4 inputlabel">
+                    <label for="cost">Cost(₹)*</label><br>
+                    <input class="inputbutton" id="cost" type="text" name="cost" required> </input>
+               </div>
+               
+             </div>
+            
+              
+           <div class="row pattern">
+            <div class="col-sm-4 inputlabel">
+                <label for="isavailable">Is Available<span id="req">*</span></label><br>
+                <select id="isavailable" name="isAvailable" class="inputbutton" required>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                    
+                </select>
+               </div>
+            <div class="col-sm-4 inputlabel">
+                <label for="Bookno">Book no.<span id="req">*</span></label><br>
+                <input class="inputbutton" id="Bookno" type="text" name="bookId" required> </input>
+           </div>
+
+           <div class="col-sm-4 inputlabel">
+            <label for="totalcopies">Total copies<span id="req">*</span></label><br>
+         <input class="inputbutton" id="totalcopies" type="text" name="total_copies" required></input>
+        </div>
+            
+        </div>
+        <div class="row alignbutton">
+          <button class="btn btn-primary addbtn" type="submit">Add</button>
+         </div>
+        
+        
+      
+        </form>
+    </div>
+</div>
+
+      <!-- bookissueform -->
+    <div class="issueform" id="issueformhide">
+        <div class="content">
+                 <form class="form" id="issue">
+                    <div class="row foricon3">
+                        <a onclick="closeissueform()"><i class="fa-solid fa-xmark"></i></a>
+                        </div>
+                      <div class=" inputbox">
+                         <div class="search-input wrapper">
+                           <a href="" target="_blank" hidden></a>
+                           <label for="bookName" class="inputlabel" id="forbookname">Book Name *</label>
+                           <input type="text" placeholder="Type to search book" name="bookName" id="bookName" required>
+                         <div class="autocom-box">
+           <!-- here list are inserted from javascript -->
+                         </div>
+                        </div>
+                         </div>
+                         <div class=" inputboxs">
+                          <div class="search-inputs wrappers">
+                            <a href="" target="_blank" hidden></a>
+                            <label for="studentrollno" class="inputlabel" id="studentrollno">Roll no *</label>
+                            <input type="text" placeholder="Type to search roll no" name="studentRollNo" id="studentrollno" required>
+                          <div class="autocom-boxs">
+            <!-- here list are inserted from javascript -->
+                          </div>
+                         </div>
+                          </div>
+                         <!-- <div class="row">
+                           <div class="col-sm-12 inputlabel">
+                             <label for="studentrollno">Student Roll no <span id="req">*</span></label><br>
+                              <input class="forbutton" id="studentrollno" type="text" name="studentRollNo" required ></input>
+                            </div>
+                         </div>
+                          -->
+                          <div class="row">
+                           <div class="col-sm-12 inputlabel">
+                             <label for="issuedate">Issue Date <span id="req">*</span></label><br>
+                              <input class="forbutton issueinput" placeholder="  dd-mm-yyyy" id="issuedate" type="date" name="issueDate" min="15-03-2023" required  ></input>
+                            </div>
+                          </div>
+                         
+                    
+                          <div class="row alignbutton">
+                               
+                         <button class="btn btn-primary buttonissue" type="submit">Issue</button>
+                        
+                        </div>
+                   
+             </form> 
+         </div>
+    </div>
+         <div class="returnform" id="returnform">
+
+
+         </div>
+     
+
+    <script src="JS/books.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="JS/bookissue.js"></script> 
+    
+</body>
+</html>
