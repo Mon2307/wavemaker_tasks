@@ -1,6 +1,6 @@
+const common ='http://localhost:8080/Library/services/';
 // const changeBackground = document.querySelector('.forbackground');
 //const formchange= document.querySelector('.newstudent');
-
 function closestudent(){
     // formchange.classList.remove('openform');
     // formchange.classList.add('closeform');
@@ -19,17 +19,21 @@ function openstudent(){
 }
 
 function gotohome(){
-    window.location.href="home.html";
+    window.location.href="index.html";
 }
 async function checkstudent(x){
-  const r= await fetch(`http://localhost:8080/Library/students/${x}`);
+  const r= await fetch(common+`students/${x}`);
   let find = await r.json();
-  
+  // let y=document.getElementById();
   console.log(find);
   if(find){
     alert('Student Exists Already.');
-    form.reset();
+    const m = document.getElementById('addstudent');
+    m.reset();
     return;
+  }
+  else{
+    return true;
   }
 }
 function Addstudent(){
@@ -54,50 +58,51 @@ function Addstudent(){
       //  }
       
       
-      checkstudent(formDataObject.rollNo);
-      let formDataJsonString = JSON.stringify(formDataObject);
+      if(checkstudent(formDataObject.rollNo)){ let formDataJsonString = JSON.stringify(formDataObject);
   
-      console.log(formDataJsonString);
-      fetch('http://localhost:8080/Library/students/insert', {
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-           
-          },
-          body: formDataJsonString
-      }).then((response) => {
-          // An important thing to note is that an error response will not throw
-          // an error so if the result is not okay we should throw the error
-          if(!response.ok) {
-            throw response;
-          }
-      
-          // since we expect a json response we will return a json call
-          const res = response.json();
-           console.log(res);
-        //   console.log('Done');
-          res.then((student)=>{
+        console.log(formDataJsonString);
+        fetch(common+'students/insert', {
+          method: 'POST',
+          headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+             
+            },
+            body: formDataJsonString
+        }).then((response) => {
+            // An important thing to note is that an error response will not throw
+            // an error so if the result is not okay we should throw the error
+            if(!response.ok) {
+              throw response;
+            }
+        
+            // since we expect a json response we will return a json call
+            const res = response.json();
+             console.log(res);
+          //   console.log('Done');
+            res.then((student)=>{
+                
+                console.log(student.studentName);
+                swal(student.studentName +" Added Successfully!");
+              //   if(book.Name != 0){
+              //       // alert("succesfully logged in")
+              //       window.location.href = "overview.html"
+              //   }else{
+              //       alert("Wrong credentials")
+              //   }
+              document.getElementById("addstudent").reset();
               
-              console.log(student.studentName);
-              swal(student.studentName +" Added Successfully!");
-            //   if(book.Name != 0){
-            //       // alert("succesfully logged in")
-            //       window.location.href = "overview.html"
-            //   }else{
-            //       alert("Wrong credentials")
-            //   }
-            document.getElementById("addstudent").reset();
-            
+            })
           })
-        })
+    }
   });
 }
+     
+
 // api url
 
 var rollno=[];
-const api_url =
-	'http://localhost:8080/Library/students';
+const api_url =common+'students';
 
 // Defining async function
 async function getapi(url) {
@@ -159,6 +164,8 @@ function show(data) {
 		<th>Email Id</th>
 		<th>Name</th>
         <th>Branch</th>
+        <th></th>
+        <th></th>
 		</tr>`;
 	// Loop to access all rows
 	for (let r of data) {
@@ -166,7 +173,9 @@ function show(data) {
   <td>${r.rollNo}</td>
 	<td>${r.mailId} </td>
 	<td>${r.studentName}</td>
-    <td>${r.Branch}</td>				
+    <td>${r.Branch}</td>
+    <td><button class="btn"onclick="deletestudent(this)"><img src=icons/deleteicon.png></button></td>	
+    <td><button class="btn  showdues" onclick="showdues(this)"> Show Dues </button></td>			
 </tr>`;
 	}
 
@@ -175,14 +184,51 @@ function show(data) {
 	document.getElementById("Students").innerHTML = tab;
 }
 
-function editstudent(e){
+async function deletestudent(e){
   var sTable = document.getElementById('Students');
-
+  console.log(e.parentNode);
+  console.log(e.parentNode.parentNode);
+  let r= e.parentNode.parentNode;
+  console.log(e.parentNode.parentNode.rowIndex);
   let index = e.parentNode.parentNode.rowIndex;
   var Cells = sTable.rows.item(index).cells;
- let studentRollNo = Cells[0].innerText;
- let  bookName = Cells[1].innerText;
+  let studentRollNo = Cells[0].innerText;
+  console.log(studentRollNo);
+     const a= await fetch(common+`students/onestudent/${studentRollNo}`);
+     var data= await a.json();
+     
+	console.log(data);
+
+   
+     console.log(data.studentId);
+     console.log(data.rollNo);
+
+     const updatedata={
+      studentId: data.studentId,
+      rollNo: data.rollNo,
+      mailId: data.mailId,
+      branchId: data.branchId,
+      genderId: data.genderId,
+      studentName: data.studentName,
+      isDeleted: true
+  } 
  
+    const sendstudent= JSON.stringify(updatedata);
+  fetch(common+'students/updatestudent', {
+    method: 'PUT',
+    headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+       
+      },
+      body: sendstudent
+  }).then((response)=>{
+    console.log(response);
+  },
+     
+
+  )
+  window.location.reload();
 }
 
 
@@ -203,4 +249,75 @@ function myFunction() {
       }
     }       
   }
+}
+
+
+async function showdues(e){
+  var sTable = document.getElementById('Students');
+  console.log(e.parentNode);
+  console.log(e.parentNode.parentNode);
+  console.log(e.parentNode.parentNode.rowIndex);
+  let index = e.parentNode.parentNode.rowIndex;
+  var Cells = sTable.rows.item(index).cells;
+  let studentRollNo = Cells[0].innerText;
+  const res= await fetch(common+`userandbook/studentdue/${studentRollNo}`);
+  console.log(res);
+  var data = await res.json();
+  console.log(data);
+  if(data.length===0){
+    alert("No Books issued");
+   
+  }
+  else{
+   
+    
+    var modal = document.getElementById("myModal");
+    modal.style.display = "block";
+    var span = document.getElementsByClassName("close")[0];
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+   
+      let tab =
+      `<tr>
+      <th>Roll No</th>
+      <th>Book Name</th>
+      <th>Dues</th>
+      <th>Issue Date</th>
+      <th>Return Date</th>
+     
+      </tr>`;
+    // Loop to access all rows
+    for (let r of data) {
+      if(r.returnDate){
+        tab += `<tr>
+        <td>${r.rollno}</td>
+        <td>${r.bookname} </td>
+        <td>${r.dues}</td>
+          <td>${r.issueDate}</td>
+          <td>${r.returnDate}</td>	
+      </tr>`
+      }
+      else{
+        tab += `<tr>
+        <td>${r.rollno}</td>
+        <td>${r.bookname} </td>
+        <td>${r.dues}</td>
+          <td>${r.issueDate}</td>
+          <td>-</td>	
+      </tr>`
+      }
+     
+     
+    }
+    document.getElementById("duestable").innerHTML = tab;
+   
+  }
+ 
+  
 }

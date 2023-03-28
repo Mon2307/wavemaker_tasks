@@ -1,7 +1,10 @@
+
+const common ='http://localhost:8080/Library/services/';
+
 const bookstable= document.getElementById("allbooks");
 const issuedbookstable= document.getElementById("issuedbooks");
 function gotohome(){
-    window.location.href="home.html";
+    window.location.href="index.html";
 }
 
 
@@ -25,7 +28,7 @@ function addbook(){
     let formDataObject = Object.fromEntries(formData.entries());
       let formDataJsonString = JSON.stringify(formDataObject);
       console.log(formDataJsonString);
-      fetch('http://localhost:8080/Library/books/insert', {
+      fetch(common+'books/insert', {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",
@@ -56,8 +59,11 @@ function addbook(){
 function showbooks(){
     bookstable.style.display="block";
     issuedbookstable.style.display="none";
-    const api_url =
-	'http://localhost:8080/Library/books';
+    const issue= document.getElementById("active");
+    const book =document.getElementById("books");
+    book.style.background="orange";
+    issue.style.background="black";
+    const api_url =common+'books';
 
 // Defining async function
 async function getapi(url) {
@@ -116,16 +122,20 @@ function show(data) {
 
 
 function showissuedbooks(){
-//   const bookbtn = document.getElementsByClassName('books');
-// bookbtn.classList.remove("active");
+  //const bookbtn = document.getElementsByClassName('active');
+//  bookbtn.classList.remove("active");
 
-// const issuedbooks =document.getElementsByClassName('issuebook');
-// issuedbooks.classList.add("active");
+//  const issuedbooks =document.querySelector('issuebook');
+ //issuedbooks.classList.add("active");
     bookstable.style.display="none";
     issuedbookstable.style.display="block";
-   const issue= document.querySelector("issue");
-   const book =document.querySelector("books");
-    const api_url ='http://localhost:8080/Library/bookissue/bookissued';
+   const issue= document.getElementById("active");
+   const book =document.getElementById("books");
+   book.style.background="black";
+   issue.style.background="orange";
+   
+
+    const api_url =common+'bookissue/bookissued';
 
 // Defining async function
 async function getapi(url) {
@@ -196,174 +206,6 @@ function myFunction() {
   }
 }
 
-
-// function issueBook(){
-   
-//     const formData = new FormData(form);
-//     const form = document.getElementById('issue');
-//     let formDataObject = Object.fromEntries(formData.entries());
-//       // Format the plain form data as JSON
-//       let formDataJsonString = JSON.stringify(formDataObject);
-//       console.log(formDataJsonString);
-           
-//            const bookName = document.getElementById('bookname');
-//            console.log('bookName');
-// }
-    // if user press any key and release
-   
- 
-// function issueabook(){
-
-//     // showbooks();
-//     const issuebookform = document.getElementById('issueformhide');
-// issuebookform.style.display="block";
-// // const  Enteredbookname= Enteredbookname.value;
-// function showbooksinlist(){
-//     var flag=0;
-//     let suggestions = [];
-//     fetch('http://localhost:8080/Library/books')
-//     .then((response)=> response.json())
-//         .then((json)=>{
-//             json.forEach(book => {
-//                 console.log(book.bookName);
-//                 if(book.total_copies){
-//                     suggestions.push(book.bookName);
-//                 }
-    
-//                 else{
-//                    flag=1;
-                   
-//                 }
-               
-//             });
-//         })
-    
-//  }
-
-// // console.log( Enteredbookname);
-// // const issueDate=  document.getElementById("issuedate")
-// // issueDate.min=new Date().toLocaleDateString('fr-ca');
-// inputBox.onkeyup = (e)=>{
-//     showbooksinlist();
-//     let userData = e.target.value; //user entered data
-//     let emptyArray = [];
-   
-//     if(userData){
-//         // icon.onclick = ()=>{
-//         //     webLink = `https://www.google.com/search?q=${userData}`;
-//         //     linkTag.setAttribute("href", webLink);
-//         //     linkTag.click();
-//         //     console.log(userData);
-//         // }
-//         emptyArray = suggestions.filter((data)=>{
-//             //filtering array value and user characters to lowercase and return only those words which are start with user entered chars
-//             return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
-//         });
-//         emptyArray = emptyArray.map((data)=>{
-//             // passing return data inside li tag
-//             return data = `<li>${data}</li>`;
-//         });
-//         searchWrapper.classList.add("active"); //show autocomplete box
-//         showSuggestions(emptyArray);
-//         let allList = suggBox.querySelectorAll("li");
-//         for (let i = 0; i < allList.length; i++) {
-//             //adding onclick attribute in all li tag
-//             allList[i].setAttribute("onclick", "select(this)");
-//             console.log(allList[i]);
-//             console.log(allList[i].value);
-//             var bookName=inputBox.value;
-//             console.log(bookName);
-           
-//         }
-//     }else{
-//         searchWrapper.classList.remove("active"); //hide autocomplete box
-//     }
-// }
-
-
-
-// function showSuggestions(list){
-//     let listData;
-//     if(!list.length){
-//         userValue = inputBox.value;
-//         listData = `<li>${userValue}</li>`;
-//     }else{
-//       listData = list.join('');
-//     }
-//     suggBox.innerHTML = listData;
-// }
-// }
-
-
-//     const form = document.getElementById('issue');
-//     form.addEventListener('submit', (e)=>{
-//             e.preventDefault();
-            
-    
-//     const formData = new FormData(form);
-//     // const data = new URLSearchParams(formData);
-//      //Create an object from the form data entries
- 
-
-//   let formDataObject = Object.fromEntries(formData.entries());
-// //   checkstudent();
-
-//   console.log(formDataObject.issueDate);
-//     //changing date format
-//     var oldDate = new Date(formDataObject.issueDate);
-//     console.log( oldDate.toLocaleDateString() + "\n" + oldDate.toISOString() + "\n" +
-//     oldDate.toDateString() +"\n" + oldDate.toUTCString());
-//     var newDate = oldDate.toDateString().substring(4,10) + ", " + oldDate.toDateString().substring(11,);
-//     console.log(newDate);
-//     formDataObject.issueDate=newDate;
-//     //issuetime
-    
-      
-//       formDataObject.issueTime=current_time;
-//     let formDataJsonString = JSON.stringify(formDataObject);
-
-//     console.log(formDataJsonString);
-//     // function issue(){}
-//     fetch('http://localhost:8080/Library/bookissue/insert', {
-//       method: 'POST',
-//       headers: {
-//           "Content-Type": "application/json",
-//           Accept: "application/json",
-         
-//         },
-//         body: formDataJsonString
-//     }).then((response) => response.text())
-//     .then((text) => {
-//       var a = text;
-//       console.log(a);
-//       alert(a);
-    
-//       })
-// })
-
-// }).then((response) => {
-    //     // An important thing to note is that an error response will not throw
-    //     // an error so if the result is not okay we should throw the error
-    //     if(!response.ok) {
-    //      throw response;
-    //      }
-        // const res = JSON.stringify(response);
-        // console.log(res);
-    //     console.log(response);
-    //   console.log(response.json());
-    //     alert(JSON.stringify(response));
-       // document.getElementById("issue").reset();
-        // location.reload();
-        // since we expect a json response we will return a json call
-        
-      //   console.log('Done');
-        //  res.then((bookissue)=>{
-        //     console.log(bookissue)
-        //  })
-
-//returnbookcode
-
-
 function SetreturnDate()
 {
 var date = new Date();
@@ -405,7 +247,7 @@ function returnbook(e){
      
      let formDataJsonString = JSON.stringify(formDataObject);
      console.log(formDataJsonString);
-      fetch('http://localhost:8080/Library/bookreturn/insert', {
+      fetch(common+'bookreturn/insert', {
            method: 'POST',
            headers: {
                "Content-Type": "application/json",
@@ -414,20 +256,19 @@ function returnbook(e){
              },
              body: formDataJsonString
          }).then((response) => {
-             // An important thing to note is that an error response will not throw
-             // an error so if the result is not okay we should throw the error
+             
              if(!response.ok) {
                throw response;
              }
          
-             // since we expect a json response we will return a json call
+            
              const res = response.json();
               console.log(res);
-           //   console.log('Done');
+           
            res.then((bookreturn)=>{
-             // var d=returnDues();
-             // console.log(d);
-                 swal(" Returned Successfully!");
+            returnDues(formDataJsonString);
+            swal(" Returned Successfully!");
+                
                
              })
      
@@ -437,13 +278,33 @@ function returnbook(e){
 
 
 
+     function returnDues(formDataJsonString){
+      fetch(common+'bookreturn/getdues', {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+           
+          },
+          body: formDataJsonString
+      }).then((response) => {
+          // An important thing to note is that an error response will not throw
+          // an error so if the result is not okay we should throw the error
+          if(!response.ok) {
+            throw response;
+          }
+      
+          // since we expect a json response we will return a json call
+          const res = response.json();
+           console.log(res);
+        //   console.log('Done');
+        res.then((dues)=>{
+            console.log(dues);
+           // swal(" Returned Successfully!");
+              //document.getElementById("return").reset();
+          })
   
-// form.addEventListener('submit', (e)=>{
-//     e.preventDefault();
-//     )
-   
-
-
-
-// }
-
+          
+        })
+    
+    }

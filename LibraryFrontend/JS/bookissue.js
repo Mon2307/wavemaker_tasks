@@ -1,5 +1,14 @@
+// const common ='http://localhost:8080/Library/services/';
+function issueabook(){
 
-
+    // showbooks();
+    const issuebookform = document.getElementById('issueformhide');
+issuebookform.style.display="block";
+const book= document.querySelector("books");
+book.classList.remove("active");
+const issuebookbtn = document.querySelector("issuebook");
+issuebookbtn.classList.add("active");
+}
 function closeissueform(){
     const issuebookform = document.getElementById('issueformhide');
     issuebookform.style.display="none";
@@ -50,7 +59,7 @@ return current_time;
 
 var flag=0;
 let suggestions = [];
-fetch('http://localhost:8080/Library/books')
+fetch(common+'books')
 .then((response)=> response.json())
     .then((json)=>{
         json.forEach(book => {
@@ -123,33 +132,7 @@ function showSuggestions(list){
     suggBox.innerHTML = listData;
 }
 
-function issueabook(){
 
-        // showbooks();
-        const issuebookform = document.getElementById('issueformhide');
-    issuebookform.style.display="block";
-}
-    // const  Enteredbookname= Enteredbookname.value;
-    // function showbooksinlist(){
-    //     fetch('http://localhost:8080/Library/books')
-    //     .then((response)=> response.json())
-    //         .then((json)=>{
-    //             json.forEach(book => {
-    //                 console.log(book.bookName);
-    //                 if(book.total_copies){
-    //                     suggestions.push(book.bookName);
-    //                 }
-     
-    //                 else{
-    //                    flag=1;
-                    
-    //                 }
-                
-    //             });
-    //         })
-     
-    //  }
-    //  showbooksinlist();
     
 const form = document.getElementById('issue');
   
@@ -175,7 +158,7 @@ form.addEventListener('submit', (e)=>{
     let formDataJsonString = JSON.stringify(formDataObject);
 
     console.log(formDataJsonString);
-    fetch('http://localhost:8080/Library/bookissue/insert', {
+    fetch(common+'bookissue/insert', {
       method: 'POST',
       headers: {
           "Content-Type": "application/json",
@@ -188,34 +171,19 @@ form.addEventListener('submit', (e)=>{
               var a = text;
               console.log(a);
               alert(a);
-              //document.getElementById("issue").reset();
+            //  document.getElementById('issue').requestFullscreen();
+            document.getElementById("issue").reset();
+            window.location.reload();
+              
     })
         // An important thing to note is that an error response will not throw
-    });    // an error so if the result is not okay we should throw the error
-        // if(!response.ok) {
-        //   throw response;
-        // }
-    
-        // since we expect a json response we will return a json call
-        // const res = response.json();
-        //  console.log(res);
-      //   console.log('Done');
-      
-//    
-    
-    
-    //     res.then((bookissue)=>{
-            
-    //         swal(" Issued Successfully!");
-    //         document.getElementById("issue").reset();
-    //     })
-    //   })
+    });    
     
 
 //forrolllno searchbar
     var x=0;
     let students = [];
-    fetch('http://localhost:8080/Library/students')
+    fetch(common+'students')
     .then((response)=> response.json())
         .then((json)=>{
             json.forEach(student => {
@@ -279,3 +247,48 @@ function showSuggestionsS(list){
     }
     suggBoxs.innerHTML = listData;
 }
+
+
+//   throw response;
+        // }
+    
+        // since we expect a json response we will return a json call
+        // const res = response.json();
+        //  console.log(res);
+      //   console.log('Done');
+      
+//    
+    
+    
+    //     res.then((bookissue)=>{
+            
+    //         swal(" Issued Successfully!");
+    //         document.getElementById("issue").reset();
+    //     })
+    //   })
+    //document.getElementById("issue").reset();
+    // an error so if the result is not okay we should throw the error
+        // if(!response.ok) {
+        
+
+    // const  Enteredbookname= Enteredbookname.value;
+    // function showbooksinlist(){
+    //     fetch('http://localhost:8080/Library/books')
+    //     .then((response)=> response.json())
+    //         .then((json)=>{
+    //             json.forEach(book => {
+    //                 console.log(book.bookName);
+    //                 if(book.total_copies){
+    //                     suggestions.push(book.bookName);
+    //                 }
+     
+    //                 else{
+    //                    flag=1;
+                    
+    //                 }
+                
+    //             });
+    //         })
+     
+    //  }
+    //  showbooksinlist();

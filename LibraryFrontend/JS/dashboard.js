@@ -1,14 +1,16 @@
+
+const common ='http://localhost:8080/Library/services/';
 const totalbooks= document.getElementById("fortotalbooks");
 const totalusers = document.getElementById("fortotalusers");
 const totaldue = document.getElementById("totaldues");
 
 
-let url1='http://localhost:8080/Library/books/totalbooks';
-let url2='http://localhost:8080/Library/students/totalstudents';
-let url3='http://localhost:8080/Library/userandbook/totaldues';
+let url1=common+'books/totalbooks';
+let url2= common+'students/totalstudents';
+let url3=common+'userandbook/totaldues';
 
 function gotohome(){
-    window.location.href="home.html";
+    window.location.href="index.html";
 }
 async function get1(url) {
     let x = await fetch(url);
@@ -44,7 +46,7 @@ async function get1(url) {
   categories.Sports=0;
   var total=0;
  async function genre(){
-    await  fetch('http://localhost:8080/Library/bookissue') 
+    await  fetch(common+'bookissue') 
     .then((response)=> response.json())
     .then((json)=>{console.log(json.Fiction);
      categories.Fiction=json.Fiction;
@@ -97,11 +99,9 @@ async function get1(url) {
         }
        },
       options: {
-        legend: {
-          labels:{
-            fonSize: 20
+        legend :{
+          horizontalAlign: "right",
           }
-        }
       }
     });
   }

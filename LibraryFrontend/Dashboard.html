@@ -18,32 +18,52 @@
 <body>
     
     <div class="forbackground"></div>
+    <nav class="navbar">
+      <div class="container-fluid">
+        <ul class="nav nav-pills">
+          <li role="presentation" ><a href="index.html">Home</a></li>
+          <li role="presentation"><a href="newstudent.html">Students</a></li>
+          <li role="presentation"><a href="Books.html">Books</a></li>
+          <li role="presentation"><a href="Dashboard.html"  class="active">Dashboard</a></li>
+        </ul>
+      </div>
+     
+    </nav>
     <div>
-        <button class="btn btn-primary back" onclick="gotohome()">Back</button>
-        <div class="jumbotron">
-            <div class="cardcontainer">
-                <div class="row cards">
+        <!-- <button class="btn btn-primary back" onclick="gotohome()">Back</button> -->
+        <div class="container-fluid">
+            <div class="cardcontainer forbg">
+                <div class="row">
                     <div class="card col-sm-4">
                       <div><h4>Total Books</h4></div>
-                      <div class="booki"><img src="icons/totalbooks.png"></div>
-                      <p id="fortotalbooks">1</p>
+                      <div class="carditems">
+                        <div><img src="icons/totalbooks.png"></div>
+                         <div> <p id="fortotalbooks" >1</p></div>  
+                      </div> 
                     </div>
                     <div class="card col-sm-4">
                       <h4>Total Users</h4>
-                      <img src="icons/totalusers.png">
-                      <p id="fortotalusers">8</p>
+                      <div class="carditems">
+                        <div><img src="icons/totalusers.png"></div>
+                         <div> <p id="fortotalusers">8</p></div>  
+                      </div> 
                     </div>
                     <div class="card col-sm-4">
                       <h4>Total Dues</h4>
-                      <img src="icons/totaldues.png">
-                      <p id="totaldues">8</p>
+                      <div class="carditems">
+                        <div> <img src="icons/totaldues.png"></div>
+                         <div> <p id="totaldues">8</p></div>  
+                      </div> 
+                     
+                     
                     </div>
                    </div>
-            </div>
+            
 
             <div class="forchart">
                 <h4 style="color:white; margin-left: 40%;" >Genre of Books issued</h4>
                 <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+            </div>
             </div>
         </div>
     </div> 
@@ -51,5 +71,6 @@
     
 
     <script src="JS/dashboard.js"></script>
+    
 </body>
 </html>

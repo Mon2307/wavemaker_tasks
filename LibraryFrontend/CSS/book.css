@@ -6,12 +6,38 @@
     top: 0px;
     z-index: -1;
     width: 100%;
-    height: 100vh;
+    height: 46vw;
     -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
     filter: blur(5px);
   }
  
+  .nav {
+    /* padding-left: 433px; */
+    /* margin-bottom: 10px; */
+    padding-top: 5px;
+    padding-bottom: 5px;
+    list-style: none;
+    background-color: black;
+    /* color: orange; */
+    width: 27%;
+    margin: auto;
+  }
 
+  .navbar{
+    background-color: black;
+    margin-bottom: 0px;
+    border-radius: 0px;
+  }
+
+
+  
+  .active {
+    color: #fff;
+    background-color: orange;
+  }
+  li a{
+    color: white;
+  }
 
 
 
@@ -22,57 +48,54 @@ a:link{
 
     .back {
         margin: 2%;
-        background-color: orange !important;
+         background-color: orange;
+         color: white;
     }
-   
-    .btn-primary.active {
+   .back :hover{
+    background-color: black ;
+    border-color: orange;
+   }
+    .btn.btn-primary.active {
       color: #fff;
-      background-color: orange;
-      border-color: black;
+       
   }
 
-  .btn-primary::selection {
+  .btn.btn-primary::selection {
     color: #fff;
-    background: orange;
+    /* background: orange !important; */
 }
   
-  .btn-primary {
+  .btn.btn-primary {
     color: #fff;
-    background-color: black;
+    /* background-color: black !important; */
     border-color: orange;
 }
-  .btn-primary.active:hover{
+  .btn.btn-primary.active:hover{
     color: rgb(255, 255, 255);
-    background-color: black;
+    /* background-color: black !important; */
     border-color: orange;
   }
-  .btn-primary:hover {
+  .btn.btn-primary:hover {
     color: rgb(255, 255, 255);
-    background-color: black;
+    /* background-color: black !important; */
     border-color: orange;
 }
 
-  .jumbotron{
-    background-color: rgba(255,255,255,.15);
-    margin: auto;
-    width: 1000px;
-    margin-bottom: 3%;
-    background-image: linear-gradient(213deg,#1f1d1c94,rgb(40 35 35 / 51%));
-    /* height: 589px; */
-    margin-top: -6%;
-    height: 534px;
-  }
+ 
 
   .issuebtn{
-    background-color: orange;
+     background-color: orange ; 
     margin-left: 75%;
   }
-
-  
+ 
+  .issuebook:active{
+    /* background-color: orange !important; */
+  }
  table, td, th {  
   border: 1px solid #ddd;
   text-align: left;
   color: white;
+  scrollbar-color: orange !important;
      }
 
  table {
@@ -81,7 +104,7 @@ a:link{
    }
 
 th, td {
- padding: 6px;
+ padding: 4px;
   }
 
   .booktable{
@@ -99,13 +122,7 @@ th, td {
 td {
     text-align:center;
 }
-  /* table{
-    table-layout: fixed;
-  }
-  tbody{
-        display: block;
-      overflow: auto;
-  } */
+  
   h1{
     text-align: center;
   }
@@ -121,63 +138,6 @@ td {
     border: 2px solid rgb(244, 241, 235);
   }
 
-/*   
-  .forbooktable .fix-table-head{
-    padding: 2%;
-    height: 720px;
-    overflow-y: scroll;
-  }
- .forbooktable table {
-     width: 100%;
-  }
- .forbooktable th {
-     top: 0;
-     position: sticky;
-  }
- .forbooktable th,td{
-     width:100%;
-     padding: 12px 15px;
-  } */
-
-  /* .booktable ::-webkit-scrollbar {
-    width: 10px;
-  } */
-  
-  /* Track */
-  /* ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-  } */
-   
-  /* Handle */
-  /* ::-webkit-scrollbar-thumb {
-    background: #888; 
-  } */
-  
-  /* Handle on hover */
-  /* ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-  } */
-  /* .forbookbg{
-    background-image: linear-gradient(213deg,#1f1d1c94,rgb(40 35 35 / 51%));
-  } */
-
-
-  /* .jumbotron{
-    background-color: rgba(255,255,255,.15);
-    margin: auto;
-    width: 1000px;
-  }
-
-  .forbackground{
-    background-image: url(background.png);
-  }
-
-  h2{
-    color:rgb(249, 247, 243) !important;
-    text-align: center;
-  } */
-
-  
 
   #issuedbooks{
     display: none;
@@ -203,6 +163,11 @@ td {
     background-color: orange;
     margin-left: 75%;
     margin-top: 1%;
+    color: white;
+  }
+
+  .forinput{
+    margin-left: 2%;
   }
 
   .addbookform{
@@ -226,14 +191,33 @@ td {
 
   .inputbutton{
     margin: auto;
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+    width: 180px;
+    border-radius: 8px;
+    padding: 5px;
+  }
+   .modal{
+      z-index: 3;
+      display: none; 
+      padding-top: 100px;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.4);
+   }
+  .pattern{
+    margin: 2% 2% 2% 6%;
   }
 
-  .pattern{
-    margin: 2%;
+  .alignadd{
+    align-content: center;
   }
 
   .addbtn{
-    margin-left: 50%;
+    margin-left: 48%;
 background-color: orange;
 margin-top: 2%;
   }
@@ -278,7 +262,22 @@ margin-left: 40%;
   text-decoration: none;
     color: black;
 }
-  
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+
+
   
   /* //bookissuecss */
   /* .inputbutton{   
@@ -387,6 +386,8 @@ margin-left: 40%;
   
   .inputbox{
   margin-top: 2%;
+ 
+    /* margin-bottom: 6%; */
   }
   .autocom-box{
   position: absolute !important;
@@ -473,7 +474,12 @@ margin-left: 40%;
     .autocom-boxs li{
     position: relative !important;
     }
-  
+    .forbg{
+      background-image: linear-gradient(213deg,#1f1d1c94,rgb(40 35 35 / 51%));
+      margin: 0% 3% 3% 3%;
+    padding-top: 2%;
+    border-radius: 12px;
+    }
 
   .issueform{
     align-items: center;
@@ -484,7 +490,7 @@ margin-left: 40%;
     padding: 25px;
     border-radius: 6px;
     background-color: white;
-  }
+  } 
  
   #issueformhide{
     display: none;
@@ -531,6 +537,6 @@ margin-left: 40%;
     padding-top: 10px;
     border: 1px orange;
     border-radius: 5px;
-    background-color: #080707;
-    color: white;
+    background-color: #efe8e8;
+    color: black;
 }
